@@ -19,7 +19,9 @@
     "index.js"
   ],
   "keywords": [
-    ""
+    "cache",
+    "directory",
+    "dir"
   ],
   "dependencies": {
     "common-dir": "^0.1.4",
