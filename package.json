@@ -1,0 +1,36 @@
+{
+  "name": "find-cache-dir",
+  "version": "0.0.0",
+  "description": "My well-made module",
+  "license": "MIT",
+  "repository": "jamestalmage/find-cache-dir",
+  "author": {
+    "name": "James Talmage",
+    "email": "james@talmage.io",
+    "url": "github.com/jamestalmage"
+  },
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "scripts": {
+    "test": "xo && nyc --reporter=lcov --reporter=text ava"
+  },
+  "files": [
+    "index.js"
+  ],
+  "keywords": [
+    ""
+  ],
+  "dependencies": {
+    "common-dir": "^0.1.4",
+    "commondir": "^1.0.1",
+    "mkdirp": "^0.5.1",
+    "pkg-dir": "^1.0.0"
+  },
+  "devDependencies": {
+    "ava": "^0.8.0",
+    "nyc": "^5.0.1",
+    "rimraf": "^2.5.0",
+    "xo": "^0.12.1"
+  }
+}
