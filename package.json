@@ -29,6 +29,7 @@
   },
   "devDependencies": {
     "ava": "^0.8.0",
+    "coveralls": "^2.11.6",
     "nyc": "^5.0.1",
     "rimraf": "^2.5.0",
     "xo": "^0.12.1"

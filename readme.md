@@ -1,4 +1,4 @@
-# find-cache-dir [![Build Status](https://travis-ci.org/jamestalmage/find-cache-dir.svg?branch=master)](https://travis-ci.org/jamestalmage/find-cache-dir)
+# find-cache-dir [![Build Status](https://travis-ci.org/jamestalmage/find-cache-dir.svg?branch=master)](https://travis-ci.org/jamestalmage/find-cache-dir) [![Coverage Status](https://coveralls.io/repos/jamestalmage/find-cache-dir/badge.svg?branch=master&service=github)](https://coveralls.io/github/jamestalmage/find-cache-dir?branch=master)
 
 > Finds the common standard cache directory.
 
