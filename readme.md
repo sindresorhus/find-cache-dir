@@ -84,7 +84,7 @@ Default `false`
 If `true`, this modifies the return type to be a function that is a thunk for `path.join(theFoundCacheDirectory)`.
 
 ```js
-const thunk = findCacheDirectory({name: 'foo', thunk: true});
+const thunk = findCacheDir({name: 'foo', thunk: true});
 
 thunk();
 //=> /some/path/node_modules/.cache/foo
