@@ -3,7 +3,7 @@
   "version": "0.1.1",
   "description": "My well-made module",
   "license": "MIT",
-  "repository": "jamestalmage/find-cache-dir",
+  "repository": "avajs/find-cache-dir",
   "author": {
     "name": "James Talmage",
     "email": "james@talmage.io",
@@ -21,7 +21,10 @@
   "keywords": [
     "cache",
     "directory",
-    "dir"
+    "dir",
+    "caching",
+    "find",
+    "search"
   ],
   "dependencies": {
     "commondir": "^1.0.1",
@@ -33,6 +36,6 @@
     "coveralls": "^2.11.6",
     "nyc": "^6.2.1",
     "rimraf": "^2.5.0",
-    "xo": "^0.13.0"
+    "xo": "^0.15.1"
   }
 }

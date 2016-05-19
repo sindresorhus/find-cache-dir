@@ -1,10 +1,8 @@
-import _test from 'ava';
-import fn from './';
+import fs from 'fs';
 import path from 'path';
 import rimraf from 'rimraf';
-import fs from 'fs';
-
-const test = _test.serial;
+import {serial as test} from 'ava';
+import fn from './';
 
 test('finds from a list of files', t => {
 	process.chdir(path.join(__dirname, '..'));

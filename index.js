@@ -7,6 +7,7 @@ var mkdirp = require('mkdirp');
 module.exports = function (options) {
 	var name = options.name;
 	var dir = options.cwd;
+
 	if (options.files) {
 		dir = commonDir(dir, options.files);
 	} else {
