@@ -104,7 +104,8 @@ This is helpful for actually putting actual files in the cache!
 - [`nyc`](https://github.com/bcoe/nyc)
 - [`AVA`](https://ava.li)
 - [`Phenomic`](https://phenomic.io)
-
+- [`babel-loader`](https://github.com/babel/babel-loader)
+- [`eslint-loader`](https://github.com/MoOx/eslint-loader)
 
 ## License
 
