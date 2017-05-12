@@ -1,6 +1,6 @@
 {
   "name": "find-cache-dir",
-  "version": "0.1.1",
+  "version": "1.0.0",
   "description": "My well-made module",
   "license": "MIT",
   "repository": "avajs/find-cache-dir",
