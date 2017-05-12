@@ -1,8 +1,8 @@
 import fs from 'fs';
 import path from 'path';
-import rimraf from 'rimraf';
+import del from 'del';
 import {serial as test} from 'ava';
-import fn from './';
+import fn from '.';
 
 test('finds from a list of files', t => {
 	process.chdir(path.join(__dirname, '..'));
@@ -22,14 +22,14 @@ test('finds from options.cwd', t => {
 
 test('creates dir', t => {
 	const dir = path.join(__dirname, 'node_modules', '.cache', 'created');
-	rimraf.sync(dir);
+	del.sync(dir);
 	fn({create: true, name: 'created', cwd: __dirname});
 	t.true(fs.existsSync(dir));
 });
 
-test('thunk', t => {
+test.only('thunk', t => {
 	const dir = path.join(__dirname, 'node_modules', '.cache', 'thunked');
-	rimraf.sync(dir);
+	del.sync(dir);
 	const thunk = fn({thunk: true, name: 'thunked', cwd: __dirname});
 	t.is(thunk('foo'), path.join(dir, 'foo'));
 	t.is(thunk('bar'), path.join(dir, 'bar'));

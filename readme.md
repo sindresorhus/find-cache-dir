@@ -101,11 +101,11 @@ This is helpful for actually putting actual files in the cache!
 
 ## Adopters
 
-- [`nyc`](https://github.com/bcoe/nyc)
 - [`AVA`](https://ava.li)
-- [`Phenomic`](https://phenomic.io)
+- [`nyc`](https://github.com/bcoe/nyc)
 - [`babel-loader`](https://github.com/babel/babel-loader)
 - [`eslint-loader`](https://github.com/MoOx/eslint-loader)
+- [`Phenomic`](https://phenomic.io)
 
 
 ## License
