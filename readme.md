@@ -106,6 +106,7 @@ This is helpful for actually putting actual files in the cache!
 - [`babel-loader`](https://github.com/babel/babel-loader)
 - [`eslint-loader`](https://github.com/MoOx/eslint-loader)
 - [`Phenomic`](https://phenomic.io)
+- [`javascripthon-loader`](https://github.com/Beg-in/javascripthon-loader)
 
 
 ## License
