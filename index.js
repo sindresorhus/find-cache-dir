@@ -4,7 +4,7 @@ const commonDir = require('commondir');
 const pkgDir = require('pkg-dir');
 const makeDir = require('make-dir');
 
-module.exports = options => {
+module.exports = (options = {}) => {
 	const {name} = options;
 	let dir = options.cwd;
 
