@@ -5,7 +5,7 @@ const pkgDir = require('pkg-dir');
 const makeDir = require('make-dir');
 
 module.exports = options => {
-	const name = options.name;
+	const {name} = options;
 	let dir = options.cwd;
 
 	if (options.files) {
@@ -24,9 +24,7 @@ module.exports = options => {
 		}
 
 		if (options.thunk) {
-			return function () {
-				return path.join.apply(path, [dir].concat(Array.prototype.slice.call(arguments)));
-			};
+			return (...args) => path.join(dir, ...args);
 		}
 	}
 
