@@ -27,7 +27,7 @@ test('creates dir', t => {
 	t.true(fs.existsSync(dir));
 });
 
-test.only('thunk', t => {
+test('thunk', t => {
 	const dir = path.join(__dirname, 'node_modules', '.cache', 'thunked');
 	del.sync(dir);
 	const thunk = fn({thunk: true, name: 'thunked', cwd: __dirname});
