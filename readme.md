@@ -2,7 +2,7 @@
 
 > Finds the common standard cache directory
 
-Recently the [`nyc`](https://github.com/bcoe/nyc) and [`AVA`](https://ava.li) projects decided to standardize on a common directory structure for storing cache information:
+Recently the [`nyc`](https://github.com/istanbuljs/nyc) and [`AVA`](https://ava.li) projects decided to standardize on a common directory structure for storing cache information:
 
 ```sh
 # nyc
@@ -104,7 +104,7 @@ This is helpful for actually putting actual files in the cache!
 ## Adopters
 
 - [`AVA`](https://ava.li)
-- [`nyc`](https://github.com/bcoe/nyc)
+- [`nyc`](https://github.com/istanbuljs/nyc)
 - [`babel-loader`](https://github.com/babel/babel-loader)
 - [`eslint-loader`](https://github.com/MoOx/eslint-loader)
 - [`Phenomic`](https://phenomic.io)
