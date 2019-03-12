@@ -2,7 +2,7 @@
 
 > Finds the common standard cache directory
 
-Recently the [`nyc`](https://github.com/istanbuljs/nyc) and [`AVA`](https://ava.li) projects decided to standardize on a common directory structure for storing cache information:
+The [`nyc`](https://github.com/istanbuljs/nyc) and [`AVA`](https://ava.li) projects decided to standardize on a common directory structure for storing cache information:
 
 ```sh
 # nyc
@@ -60,7 +60,7 @@ Should be the same as your project name in `package.json`.
 
 ##### files
 
-Type: `Array` `string`
+Type: `string[]` `string`
 
 An array of files that will be searched for a common parent directory. This common parent directory will be used in lieu of the `cwd` option below.
 
