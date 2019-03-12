@@ -23,7 +23,7 @@
 	],
 	"dependencies": {
 		"commondir": "^1.0.1",
-		"make-dir": "^1.0.0",
+		"make-dir": "^2.0.0",
 		"pkg-dir": "^3.0.0"
 	},
 	"devDependencies": {
