@@ -1,6 +1,6 @@
 {
 	"name": "find-cache-dir",
-	"version": "2.0.0",
+	"version": "2.1.0",
 	"description": "Finds the common standard cache directory",
 	"license": "MIT",
 	"repository": "avajs/find-cache-dir",
