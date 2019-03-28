@@ -41,6 +41,21 @@ findCacheDir({name: 'unicorns'});
 ```
 
 
+---
+
+<div align="center">
+	<b>
+		<a href="https://tidelift.com/subscription/pkg/npm-find_cache-dir?utm_source=npm-find-cache-dir&utm_medium=referral&utm_campaign=readme">Get professional support for this package with a Tidelift subscription</a>
+	</b>
+	<br>
+	<sub>
+		Tidelift helps make open source sustainable for maintainers while giving companies<br>assurances about security, maintenance, and licensing for their dependencies.
+	</sub>
+</div>
+
+---
+
+
 ## API
 
 ### findCacheDir([options])
@@ -109,6 +124,11 @@ This is helpful for actually putting actual files in the cache!
 - [`eslint-loader`](https://github.com/MoOx/eslint-loader)
 - [`Phenomic`](https://phenomic.io)
 - [`javascripthon-loader`](https://github.com/Beg-in/javascripthon-loader)
+
+
+## Security
+
+To report a security vulnerability, please use the [Tidelift security contact](https://tidelift.com/security). Tidelift will coordinate the fix and disclosure.
 
 
 ## License
