@@ -35,7 +35,7 @@ test('thunk', t => {
 	t.is(thunk('bar'), path.join(directory, 'bar'));
 });
 
-test('returns null if it can\'t find package.json', t => {
+test('returns undefined if it can\'t find package.json', t => {
 	process.chdir(path.join(__dirname, '..'));
-	t.is(findCacheDir({name: 'foo'}), null);
+	t.is(findCacheDir({name: 'foo'}), undefined);
 });
