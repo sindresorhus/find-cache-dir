@@ -41,30 +41,15 @@ findCacheDir({name: 'unicorns'});
 ```
 
 
----
-
-<div align="center">
-	<b>
-		<a href="https://tidelift.com/subscription/pkg/npm-find_cache-dir?utm_source=npm-find-cache-dir&utm_medium=referral&utm_campaign=readme">Get professional support for this package with a Tidelift subscription</a>
-	</b>
-	<br>
-	<sub>
-		Tidelift helps make open source sustainable for maintainers while giving companies<br>assurances about security, maintenance, and licensing for their dependencies.
-	</sub>
-</div>
-
----
-
-
 ## API
 
-### findCacheDir([options])
+### findCacheDir(options?)
 
 Finds the cache directory using the supplied options. The algorithm tries to find a `package.json` file, searching every parent directory of the `cwd` specified (or implied from other options). It returns a `string` containing the absolute path to the cache directory, or `undefined` if `package.json` was never found.
 
 #### options
 
-Type: `Object`
+Type: `object`
 
 ##### name
 
@@ -75,7 +60,7 @@ Should be the same as your project name in `package.json`.
 
 ##### files
 
-Type: `string[]` `string`
+Type: `string[] | string`
 
 An array of files that will be searched for a common parent directory. This common parent directory will be used in lieu of the `cwd` option below.
 
@@ -126,11 +111,14 @@ This is helpful for actually putting actual files in the cache!
 - [`javascripthon-loader`](https://github.com/Beg-in/javascripthon-loader)
 
 
-## Security
+---
 
-To report a security vulnerability, please use the [Tidelift security contact](https://tidelift.com/security). Tidelift will coordinate the fix and disclosure.
-
-
-## License
-
-MIT
+<div align="center">
+	<b>
+		<a href="https://tidelift.com/subscription/pkg/npm-find_cache-dir?utm_source=npm-find-cache-dir&utm_medium=referral&utm_campaign=readme">Get professional support for this package with a Tidelift subscription</a>
+	</b>
+	<br>
+	<sub>
+		Tidelift helps make open source sustainable for maintainers while giving companies<br>assurances about security, maintenance, and licensing for their dependencies.
+	</sub>
+</div>
