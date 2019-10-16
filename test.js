@@ -20,6 +20,13 @@ test('finds from options.cwd', t => {
 	t.is(findCacheDir({cwd: __dirname, name: 'bar'}), path.join(__dirname, 'node_modules', '.cache', 'bar'));
 });
 
+test('supports CACHE_DIR environmental variable', t => {
+	const newCacheDir = path.join(__dirname, 'new-cache-dir');
+	process.env.CACHE_DIR = newCacheDir;
+	t.is(findCacheDir(), newCacheDir);
+	delete process.env.CACHE_DIR;
+});
+
 test('creates dir', t => {
 	const directory = path.join(__dirname, 'node_modules', '.cache', 'created');
 	del.sync(directory);
