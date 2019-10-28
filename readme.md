@@ -45,7 +45,7 @@ findCacheDir({name: 'unicorns'});
 
 ### findCacheDir(options?)
 
-Finds the cache directory using the supplied options. The algorithm tries to find a `package.json` file, searching every parent directory of the `cwd` specified (or implied from other options). It returns a `string` containing the absolute path to the cache directory, or `undefined` if `package.json` was never found.
+Finds the cache directory using the supplied options. The algorithm tries to find a `package.json` file, searching every parent directory of the `cwd` specified (or implied from other options). It returns a `string` containing the absolute path to the cache directory, or `undefined` if `package.json` was never found or if the `node_modules` directory is unwritable.
 
 #### options
 
