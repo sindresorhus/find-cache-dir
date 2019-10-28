@@ -19,7 +19,7 @@ module.exports = (options = {}) => {
 
 	if (directory) {
 		if (!isWritable.sync(path.join(directory, 'node_modules'))) {
-			return null;
+			return undefined;
 		}
 
 		directory = path.join(directory, 'node_modules', '.cache', name);
