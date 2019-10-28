@@ -1,9 +1,18 @@
 'use strict';
 const path = require('path');
-const isWritable = require('is-writable');
+const fs = require('fs');
 const commonDir = require('commondir');
 const pkgDir = require('pkg-dir');
 const makeDir = require('make-dir');
+
+const isWritable = path => {
+	try {
+		fs.accessSync(path, fs.constants.W_OK);
+		return true;
+	} catch (_) {
+		return false;
+	}
+};
 
 module.exports = (options = {}) => {
 	const {name} = options;
