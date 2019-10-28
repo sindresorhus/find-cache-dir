@@ -1,5 +1,6 @@
 'use strict';
 const path = require('path');
+const isWritable = require('is-writable');
 const commonDir = require('commondir');
 const pkgDir = require('pkg-dir');
 const makeDir = require('make-dir');
@@ -17,6 +18,10 @@ module.exports = (options = {}) => {
 	directory = pkgDir.sync(directory);
 
 	if (directory) {
+		if (!isWritable.sync(path.join(directory, 'node_modules'))) {
+			return null;
+		}
+
 		directory = path.join(directory, 'node_modules', '.cache', name);
 
 		if (directory && options.create) {
