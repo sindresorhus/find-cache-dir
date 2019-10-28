@@ -27,7 +27,7 @@ module.exports = (options = {}) => {
 	directory = pkgDir.sync(directory);
 
 	if (directory) {
-		if (!isWritable.sync(path.join(directory, 'node_modules'))) {
+		if (!isWritable(path.join(directory, 'node_modules'))) {
 			return undefined;
 		}
 
