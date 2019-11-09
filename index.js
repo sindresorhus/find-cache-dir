@@ -25,18 +25,19 @@ module.exports = (options = {}) => {
 		} else {
 			directory = directory || process.cwd();
 		}
-
-  directory = pkgDir.sync(directory);
-
-	if (directory) {
-		if (!isWritable(path.join(directory, 'node_modules'))) {
-			return undefined;
-		}
-
-		directory = path.join(directory, 'node_modules', '.cache', name);
+		
+		directory = pkgDir.sync(directory);
 
 		if (directory) {
+			if (!isWritable(path.join(directory, 'node_modules'))) {
+				return undefined;
+			}
+
 			directory = path.join(directory, 'node_modules', '.cache', name);
+
+			if (directory) {
+				directory = path.join(directory, 'node_modules', '.cache', name);
+			}
 		}
 	}
 
