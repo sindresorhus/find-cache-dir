@@ -27,8 +27,11 @@ module.exports = (options = {}) => {
 	directory = pkgDir.sync(directory);
 
 	if (directory) {
-		if (!isWritable(path.join(directory, 'node_modules'))) {
-			return undefined;
+		const nodeModules = path.join(directory, 'node_modules');
+		if (!isWritable(nodeModules)) {
+			if (fs.existsSync(nodeModules) || !isWritable(path.join(directory))) {
+				return undefined;
+			}
 		}
 
 		directory = path.join(directory, 'node_modules', '.cache', name);
