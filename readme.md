@@ -103,6 +103,7 @@ This is helpful for actually putting actual files in the cache!
 
 ## Adopters
 
+- [`Storybook`](https://storybook.js.org/)
 - [`AVA`](https://ava.li)
 - [`nyc`](https://github.com/istanbuljs/nyc)
 - [`babel-loader`](https://github.com/babel/babel-loader)
