@@ -28,10 +28,11 @@ module.exports = (options = {}) => {
 
 	if (directory) {
 		const nodeModules = path.join(directory, 'node_modules');
-		if (!isWritable(nodeModules)) {
-			if (fs.existsSync(nodeModules) || !isWritable(path.join(directory))) {
-				return undefined;
-			}
+		if (
+			!isWritable(nodeModules) &&
+			(fs.existsSync(nodeModules) || !isWritable(path.join(directory)))
+		) {
+			return undefined;
 		}
 
 		directory = path.join(directory, 'node_modules', '.cache', name);
