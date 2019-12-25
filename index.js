@@ -16,12 +16,10 @@ const isWritable = path => {
 
 module.exports = (options = {}) => {
 	const {name} = options;
-	let directory = options.cwd;
+	let directory = options.cwd || process.cwd();;
 
 	if (options.files) {
 		directory = commonDir(directory, options.files);
-	} else {
-		directory = directory || process.cwd();
 	}
 
 	directory = pkgDir.sync(directory);
