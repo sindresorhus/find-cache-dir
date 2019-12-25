@@ -16,7 +16,7 @@ const isWritable = path => {
 
 module.exports = (options = {}) => {
 	const {name} = options;
-	let directory = options.cwd || process.cwd();;
+	let directory = options.cwd || process.cwd();
 
 	if (options.files) {
 		directory = commonDir(directory, options.files);
