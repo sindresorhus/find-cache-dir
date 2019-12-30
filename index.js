@@ -35,7 +35,7 @@ module.exports = (options = {}) => {
 
 		directory = path.join(directory, 'node_modules', '.cache', name);
 
-		if (directory && options.create) {
+		if (options.create) {
 			makeDir.sync(directory);
 		}
 
