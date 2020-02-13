@@ -15,38 +15,39 @@ const isWritable = path => {
 };
 
 module.exports = (options = {}) => {
-	const cacheDir = process.env.CACHE_DIR;
 	const {name} = options;
-	let directory = cacheDir || options.cwd;
+
+	const cacheDir = process.env.CACHE_DIR;
+	let directory = cacheDir ? path.join(cacheDir, 'find-cache-dir') : options.cwd || process.cwd();
 
 	if (!cacheDir) {
 		if (options.files) {
 			directory = commonDir(directory, options.files);
-		} else {
-			directory = directory || process.cwd();
 		}
-		
-		directory = pkgDir.sync(directory);
 
-		if (directory) {
-			if (!isWritable(path.join(directory, 'node_modules'))) {
+		directory = pkgDir.sync(directory);
+	}
+
+	if (directory) {
+		if (!cacheDir) {
+			const nodeModules = path.join(directory, 'node_modules');
+			if (
+				!isWritable(nodeModules) &&
+				(fs.existsSync(nodeModules) || !isWritable(path.join(directory)))
+			) {
 				return undefined;
 			}
 
 			directory = path.join(directory, 'node_modules', '.cache', name);
-
-			if (directory) {
-				directory = path.join(directory, 'node_modules', '.cache', name);
-			}
 		}
-	}
 
-	if (directory && options.create) {
-		makeDir.sync(directory);
-	}
+		if (options.create) {
+			makeDir.sync(directory);
+		}
 
-	if (options.thunk) {
-		return (...arguments_) => path.join(directory, ...arguments_);
+		if (options.thunk) {
+			return (...arguments_) => path.join(directory, ...arguments_);
+		}
 	}
 
 	return directory;

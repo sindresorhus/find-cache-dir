@@ -1,8 +1,9 @@
 import fs from 'fs';
 import path from 'path';
+import findCacheDir from '.';
 import {serial as test} from 'ava';
 import del from 'del';
-import findCacheDir from '.';
+import {directory as tempDir} from 'tempy';
 
 test('finds from a list of files', t => {
 	process.chdir(path.join(__dirname, '..'));
@@ -21,9 +22,9 @@ test('finds from options.cwd', t => {
 });
 
 test('supports CACHE_DIR environmental variable', t => {
-	const newCacheDir = path.join(__dirname, 'new-cache-dir');
+	const newCacheDir = tempDir();
 	process.env.CACHE_DIR = newCacheDir;
-	t.is(findCacheDir(), newCacheDir);
+	t.is(findCacheDir(), path.join(newCacheDir, 'find-cache-dir'));
 	delete process.env.CACHE_DIR;
 });
 
