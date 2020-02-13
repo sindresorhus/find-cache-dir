@@ -16,7 +16,6 @@ const isWritable = path => {
 
 module.exports = (options = {}) => {
 	const {name} = options;
-
 	const cacheDir = process.env.CACHE_DIR;
 	let directory = cacheDir ? path.join(cacheDir, 'find-cache-dir') : options.cwd || process.cwd();
 

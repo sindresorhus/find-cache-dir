@@ -1,5 +1,10 @@
+os:
+  - osx
+  - linux
+  - windows
 language: node_js
 node_js:
+  - '12'
   - '10'
   - '8'
 after_script:

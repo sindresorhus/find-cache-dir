@@ -23,13 +23,11 @@ rm -rf ./node_modules/.cache
 
 If you decide to adopt this pattern, please file a PR adding your name to the list of adopters below.
 
-
 ## Install
 
 ```
 $ npm install find-cache-dir
 ```
-
 
 ## Usage
 
@@ -58,7 +56,7 @@ Type: `object`
 
 ##### name
 
-*Required*<br>
+*Required*\
 Type: `string`
 
 Should be the same as your project name in `package.json`.
@@ -71,21 +69,21 @@ An array of files that will be searched for a common parent directory. This comm
 
 ##### cwd
 
-Type: `string`<br>
+Type: `string`\
 Default `process.cwd()`
 
 Directory to start searching for a `package.json` from.
 
 ##### create
 
-Type: `boolean`<br>
+Type: `boolean`\
 Default `false`
 
 If `true`, the directory will be created synchronously before returning.
 
 ##### thunk
 
-Type: `boolean`<br>
+Type: `boolean`\
 Default `false`
 
 If `true`, this modifies the return type to be a function that is a thunk for `path.join(theFoundCacheDirectory)`.
@@ -105,16 +103,15 @@ thunk('baz', 'quz.js')
 
 This is helpful for actually putting actual files in the cache!
 
-
 ## Adopters
 
 - [`AVA`](https://ava.li)
 - [`nyc`](https://github.com/istanbuljs/nyc)
+- [`Storybook`](https://storybook.js.org)
 - [`babel-loader`](https://github.com/babel/babel-loader)
 - [`eslint-loader`](https://github.com/MoOx/eslint-loader)
 - [`Phenomic`](https://phenomic.io)
 - [`javascripthon-loader`](https://github.com/Beg-in/javascripthon-loader)
-
 
 ---
 
