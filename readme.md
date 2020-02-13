@@ -41,6 +41,11 @@ findCacheDir({name: 'unicorns'});
 ```
 
 
+## Tips
+
+- To test modules using `find-cache-dir`, set the `CACHE_DIR` environmental variable to temporarily override the directory that is resolved.
+
+
 ## API
 
 ### findCacheDir(options?)
