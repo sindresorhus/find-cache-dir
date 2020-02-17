@@ -3,7 +3,7 @@ import path from 'path';
 import findCacheDir from '.';
 import {serial as test} from 'ava';
 import del from 'del';
-import {directory as tempDir} from 'tempy';
+import {directory as tempDirectory} from 'tempy';
 
 test('finds from a list of files', t => {
 	process.chdir(path.join(__dirname, '..'));
