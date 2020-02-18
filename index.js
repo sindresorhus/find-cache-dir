@@ -14,6 +14,18 @@ const isWritable = path => {
 	}
 };
 
+function getNodeModuleDirectory(directory, name) {
+	const nodeModules = path.join(directory, 'node_modules');
+	if (
+		!isWritable(nodeModules) &&
+		(fs.existsSync(nodeModules) || !isWritable(path.join(directory)))
+	) {
+		return undefined;
+	}
+
+	return path.join(directory, 'node_modules', '.cache', name);
+}
+
 module.exports = (options = {}) => {
 	const {name} = options;
 	const cacheDir = process.env.CACHE_DIR;
@@ -29,15 +41,10 @@ module.exports = (options = {}) => {
 
 	if (directory) {
 		if (!cacheDir) {
-			const nodeModules = path.join(directory, 'node_modules');
-			if (
-				!isWritable(nodeModules) &&
-				(fs.existsSync(nodeModules) || !isWritable(path.join(directory)))
-			) {
+			directory = getNodeModuleDirectory(directory, name);
+			if (directory === undefined) {
 				return undefined;
 			}
-
-			directory = path.join(directory, 'node_modules', '.cache', name);
 		}
 
 		if (options.create) {

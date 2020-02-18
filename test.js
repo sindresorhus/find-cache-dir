@@ -42,18 +42,18 @@ test('returns undefined if it can\'t find package.json', t => {
 });
 
 test('supports CACHE_DIR environment variable', t => {
-	const newCacheDirectory = tempDir();
-	const finalDir = path.join(newCacheDir, 'find-cache-dir');
-	process.env.CACHE_DIR = newCacheDir;
+	const newCacheDirectory = tempDirectory();
+	const finalDirectory = path.join(newCacheDirectory, 'find-cache-dir');
+	process.env.CACHE_DIR = newCacheDirectory;
 
-	t.is(findCacheDir(), finalDir);
+	t.is(findCacheDir(), finalDirectory);
 
 	findCacheDir({create: true});
-	t.true(fs.existsSync(finalDir));
+	t.true(fs.existsSync(finalDirectory));
 
 	const thunk = findCacheDir({thunk: true});
-	t.is(thunk('foo'), path.join(finalDir, 'foo'));
-	t.is(thunk('bar'), path.join(finalDir, 'bar'));
+	t.is(thunk('foo'), path.join(finalDirectory, 'foo'));
+	t.is(thunk('bar'), path.join(finalDirectory, 'bar'));
 
 	delete process.env.CACHE_DIR;
 });
