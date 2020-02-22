@@ -35,7 +35,7 @@ function getNodeModuleDirectory(directory) {
 		!isWritable(nodeModules) &&
 		(fs.existsSync(nodeModules) || !isWritable(path.join(directory)))
 	) {
-		return undefined;
+		return;
 	}
 
 	return nodeModules;
@@ -62,6 +62,4 @@ module.exports = (options = {}) => {
 
 		return useDirectory(path.join(directory, 'node_modules', '.cache', options.name), options);
 	}
-
-	return undefined;
 };
