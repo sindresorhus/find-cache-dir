@@ -2,6 +2,7 @@ import fs from 'fs';
 import path from 'path';
 import {serial as test} from 'ava';
 import del from 'del';
+import {directory as tempDirectory} from 'tempy';
 import findCacheDir from '.';
 
 test('finds from a list of files', t => {
@@ -38,4 +39,21 @@ test('thunk', t => {
 test('returns undefined if it can\'t find package.json', t => {
 	process.chdir(path.join(__dirname, '..'));
 	t.is(findCacheDir({name: 'foo'}), undefined);
+});
+
+test('supports CACHE_DIR environment variable', t => {
+	const newCacheDirectory = tempDirectory();
+	const finalDirectory = path.join(newCacheDirectory, 'find-cache-dir');
+	process.env.CACHE_DIR = newCacheDirectory;
+
+	t.is(findCacheDir(), finalDirectory);
+
+	findCacheDir({create: true});
+	t.true(fs.existsSync(finalDirectory));
+
+	const thunk = findCacheDir({thunk: true});
+	t.is(thunk('foo'), path.join(finalDirectory, 'foo'));
+	t.is(thunk('bar'), path.join(finalDirectory, 'bar'));
+
+	delete process.env.CACHE_DIR;
 });
