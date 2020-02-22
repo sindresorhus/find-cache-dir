@@ -38,12 +38,6 @@ findCacheDir({name: 'unicorns'});
 //=> '/user/path/node-modules/.cache/unicorns'
 ```
 
-
-## Tips
-
-- To test modules using `find-cache-dir`, set the `CACHE_DIR` environmental variable to temporarily override the directory that is resolved.
-
-
 ## API
 
 ### findCacheDir(options?)
@@ -102,6 +96,10 @@ thunk('baz', 'quz.js')
 ```
 
 This is helpful for actually putting actual files in the cache!
+
+## Tips
+
+- To test modules using `find-cache-dir`, set the `CACHE_DIR` environment variable to temporarily override the directory that is resolved.
 
 ## Adopters
 
