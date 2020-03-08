@@ -59,7 +59,7 @@ test('supports CACHE_DIR environment variable', t => {
 });
 
 test('ignores yes/no like value for CACHE_DIR environment variable', t => {
-	process.env.CACHE_DIR = false;
+	process.env.CACHE_DIR = 'false';
 
 	t.not(findCacheDir(), path.resolve(__dirname, 'false', 'find-cache-dir'));
 });

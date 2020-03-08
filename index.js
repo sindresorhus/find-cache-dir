@@ -4,7 +4,6 @@ const fs = require('fs');
 const commonDir = require('commondir');
 const pkgDir = require('pkg-dir');
 const makeDir = require('make-dir');
-const yn = require('yn');
 
 const {env, cwd} = process;
 
@@ -43,7 +42,7 @@ function getNodeModuleDirectory(directory) {
 }
 
 module.exports = (options = {}) => {
-	if (env.CACHE_DIR && yn(env.CACHE_DIR) === undefined) {
+	if (env.CACHE_DIR && !/^true|false|1|0$/.test(env.CACHE_DIR)) {
 		return useDirectory(path.join(env.CACHE_DIR, 'find-cache-dir'), options);
 	}
 
