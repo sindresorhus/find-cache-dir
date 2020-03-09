@@ -5,6 +5,8 @@ const commonDir = require('commondir');
 const pkgDir = require('pkg-dir');
 const makeDir = require('make-dir');
 
+const {env, cwd} = process;
+
 const isWritable = path => {
 	try {
 		fs.accessSync(path, fs.constants.W_OK);
@@ -40,11 +42,11 @@ function getNodeModuleDirectory(directory) {
 }
 
 module.exports = (options = {}) => {
-	if (process.env.CACHE_DIR) {
-		return useDirectory(path.join(process.env.CACHE_DIR, 'find-cache-dir'), options);
+	if (env.CACHE_DIR && !['true', 'false', '1', '0'].includes(env.CACHE_DIR)) {
+		return useDirectory(path.join(env.CACHE_DIR, 'find-cache-dir'), options);
 	}
 
-	let {cwd: directory = process.cwd()} = options;
+	let {cwd: directory = cwd()} = options;
 
 	if (options.files) {
 		directory = commonDir(directory, options.files);
