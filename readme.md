@@ -110,6 +110,7 @@ This is helpful for actually putting actual files in the cache!
 - [`eslint-loader`](https://github.com/MoOx/eslint-loader)
 - [`Phenomic`](https://phenomic.io)
 - [`javascripthon-loader`](https://github.com/Beg-in/javascripthon-loader)
+- [`creevey`](https://github.com/wkich/creevey)
 
 ---
 
