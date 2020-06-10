@@ -103,13 +103,12 @@ This is helpful for actually putting actual files in the cache!
 
 ## Adopters
 
-- [`AVA`](https://ava.li)
+- [`ava`](https://avajs.dev)
 - [`nyc`](https://github.com/istanbuljs/nyc)
-- [`Storybook`](https://storybook.js.org)
+- [`storybook`](https://github.com/storybookjs/storybook)
 - [`babel-loader`](https://github.com/babel/babel-loader)
 - [`eslint-loader`](https://github.com/MoOx/eslint-loader)
-- [`Phenomic`](https://phenomic.io)
-- [`javascripthon-loader`](https://github.com/Beg-in/javascripthon-loader)
+- [More…](https://www.npmjs.com/browse/depended/find-cache-dir)
 
 ---
 
