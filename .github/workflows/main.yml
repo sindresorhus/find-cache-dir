@@ -25,5 +25,7 @@ jobs:
           node-version: ${{ matrix.node-version }}
       - run: npm install
       - run: npm test
-      - run: cat ./coverage/lcov.info | ./node_modules/.bin/coveralls
-        if: always()
+      - uses: codecov/codecov-action@v1
+        if: matrix.node-version == 14
+        with:
+          fail_ci_if_error: true
