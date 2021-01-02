@@ -25,3 +25,5 @@ jobs:
           node-version: ${{ matrix.node-version }}
       - run: npm install
       - run: npm test
+      - run: cat ./coverage/lcov.info | ./node_modules/.bin/coveralls
+        if: always()
