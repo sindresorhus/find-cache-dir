@@ -1,4 +1,4 @@
-# find-cache-dir [![Build Status](https://travis-ci.org/avajs/find-cache-dir.svg?branch=master)](https://travis-ci.org/avajs/find-cache-dir) [![Coverage Status](https://coveralls.io/repos/github/avajs/find-cache-dir/badge.svg?branch=master)](https://coveralls.io/github/avajs/find-cache-dir?branch=master)
+# find-cache-dir
 
 > Finds the common standard cache directory
 
