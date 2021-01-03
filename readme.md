@@ -1,4 +1,4 @@
-# find-cache-dir
+# find-cache-dir [![Coverage Status](https://codecov.io/gh/avajs/find-cache-dir/branch/master/graph/badge.svg)](https://codecov.io/gh/avajs/find-cache-dir/branch/master)
 
 > Finds the common standard cache directory
 
