@@ -108,6 +108,7 @@ This is helpful for actually putting actual files in the cache!
 - [`storybook`](https://github.com/storybookjs/storybook)
 - [`babel-loader`](https://github.com/babel/babel-loader)
 - [`eslint-loader`](https://github.com/MoOx/eslint-loader)
+- [`putout`](https://github.com/coderaiser/putout)
 - [More…](https://www.npmjs.com/browse/depended/find-cache-dir)
 
 ---
