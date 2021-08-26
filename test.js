@@ -43,15 +43,15 @@ test('returns undefined if it can\'t find package.json', t => {
 
 test('supports CACHE_DIR environment variable', t => {
 	const newCacheDirectory = tempDirectory();
-	const finalDirectory = path.join(newCacheDirectory, 'find-cache-dir');
+	const finalDirectory = path.join(newCacheDirectory, 'some-package');
 	process.env.CACHE_DIR = newCacheDirectory;
 
-	t.is(findCacheDir(), finalDirectory);
+	t.is(findCacheDir({name: 'some-package'}), finalDirectory);
 
-	findCacheDir({create: true});
+	findCacheDir({name: 'some-package', create: true});
 	t.true(fs.existsSync(finalDirectory));
 
-	const thunk = findCacheDir({thunk: true});
+	const thunk = findCacheDir({name: 'some-package', thunk: true});
 	t.is(thunk('foo'), path.join(finalDirectory, 'foo'));
 	t.is(thunk('bar'), path.join(finalDirectory, 'bar'));
 
