@@ -6,7 +6,7 @@
 	"repository": "avajs/find-cache-dir",
 	"funding": "https://github.com/avajs/find-cache-dir?sponsor=1",
 	"engines": {
-		"node": ">=8"
+		"node": "^12.20.0 || ^14.13.1 || >=16.0.0"
 	},
 	"scripts": {
 		"test": "xo && nyc ava"
@@ -25,7 +25,7 @@
 	"dependencies": {
 		"commondir": "^1.0.1",
 		"make-dir": "^3.0.2",
-		"pkg-dir": "^4.1.0"
+		"pkg-dir": "^6.0.1"
 	},
 	"devDependencies": {
 		"ava": "^2.4.0",
