@@ -1,4 +1,4 @@
-# find-cache-dir [![Coverage Status](https://codecov.io/gh/avajs/find-cache-dir/branch/master/graph/badge.svg)](https://codecov.io/gh/avajs/find-cache-dir/branch/master)
+# find-cache-dir
 
 > Finds the common standard cache directory
 
@@ -21,26 +21,24 @@ This module makes it easy to correctly locate the cache directory according to t
 rm -rf ./node_modules/.cache
 ```
 
-If you decide to adopt this pattern, please file a PR adding your name to the list of adopters below.
-
 ## Install
 
-```
-$ npm install find-cache-dir
+```sh
+npm install find-cache-dir
 ```
 
 ## Usage
 
 ```js
-const findCacheDir = require('find-cache-dir');
+import findCacheDirectory from 'find-cache-dir';
 
-findCacheDir({name: 'unicorns'});
+findCacheDirectory({name: 'unicorns'});
 //=> '/user/path/node-modules/.cache/unicorns'
 ```
 
 ## API
 
-### findCacheDir(options?)
+### findCacheDirectory(options?)
 
 Finds the cache directory using the supplied options. The algorithm checks for the `CACHE_DIR` environmental variable and uses it if it is not set to `true`, `false`, `1` or `0`. If one is not found, it tries to find a `package.json` file, searching every parent directory of the `cwd` specified (or implied from other options). It returns a `string` containing the absolute path to the cache directory, or `undefined` if `package.json` was never found or if the `node_modules` directory is unwritable.
 
@@ -109,15 +107,3 @@ This is helpful for actually putting actual files in the cache!
 - [`babel-loader`](https://github.com/babel/babel-loader)
 - [`eslint-loader`](https://github.com/MoOx/eslint-loader)
 - [More…](https://www.npmjs.com/browse/depended/find-cache-dir)
-
----
-
-<div align="center">
-	<b>
-		<a href="https://tidelift.com/subscription/pkg/npm-find_cache-dir?utm_source=npm-find-cache-dir&utm_medium=referral&utm_campaign=readme">Get professional support for this package with a Tidelift subscription</a>
-	</b>
-	<br>
-	<sub>
-		Tidelift helps make open source sustainable for maintainers while giving companies<br>assurances about security, maintenance, and licensing for their dependencies.
-	</sub>
-</div>
