@@ -16,10 +16,11 @@
 		"node": ">=14.16"
 	},
 	"scripts": {
-		"test": "xo && ava"
+		"test": "xo && ava && tsd"
 	},
 	"files": [
-		"index.js"
+		"index.js",
+		"index.d.ts"
 	],
 	"keywords": [
 		"cache",
@@ -37,7 +38,8 @@
 		"ava": "^5.0.1",
 		"del": "^7.0.0",
 		"tempy": "^3.0.0",
-		"xo": "^0.52.4"
+		"tsd": "^0.28.0",
+		"xo": "^0.56.0"
 	},
 	"ava": {
 		"workerThreads": false
