@@ -25,19 +25,11 @@ test('finds from options.cwd', t => {
 	t.is(findCacheDirectory({cwd: __dirname, name: 'bar'}), path.join(__dirname, 'node_modules', '.cache', 'bar'));
 });
 
-test('creates dir', t => {
+test('creates directory', t => {
 	const directory = path.join(__dirname, 'node_modules', '.cache', 'created');
 	deleteSync(directory);
 	findCacheDirectory({create: true, name: 'created', cwd: __dirname});
 	t.true(fs.existsSync(directory));
-});
-
-test('thunk', t => {
-	const directory = path.join(__dirname, 'node_modules', '.cache', 'thunked');
-	deleteSync(directory);
-	const thunk = findCacheDirectory({thunk: true, name: 'thunked', cwd: __dirname});
-	t.is(thunk('foo'), path.join(directory, 'foo'));
-	t.is(thunk('bar'), path.join(directory, 'bar'));
 });
 
 test('returns undefined if it can\'t find package.json', t => {
@@ -54,10 +46,6 @@ test('supports CACHE_DIR environment variable', t => {
 
 	findCacheDirectory({name: 'some-package', create: true});
 	t.true(fs.existsSync(finalDirectory));
-
-	const thunk = findCacheDirectory({name: 'some-package', thunk: true});
-	t.is(thunk('foo'), path.join(finalDirectory, 'foo'));
-	t.is(thunk('bar'), path.join(finalDirectory, 'bar'));
 
 	delete process.env.CACHE_DIR;
 });

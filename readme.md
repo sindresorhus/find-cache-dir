@@ -40,7 +40,9 @@ findCacheDirectory({name: 'unicorns'});
 
 ### findCacheDirectory(options?)
 
-Finds the cache directory using the supplied options. The algorithm checks for the `CACHE_DIR` environmental variable and uses it if it is not set to `true`, `false`, `1` or `0`. If one is not found, it tries to find a `package.json` file, searching every parent directory of the `cwd` specified (or implied from other options). It returns a `string` containing the absolute path to the cache directory, or `undefined` if `package.json` was never found or if the `node_modules` directory is unwritable.
+Finds the cache directory using the given options.
+
+The algorithm checks for the `CACHE_DIR` environmental variable and uses it if it is not set to `true`, `false`, `1` or `0`. If one is not found, it tries to find a `package.json` file, searching every parent directory of the `cwd` specified (or implied from other options). It returns a `string` containing the absolute path to the cache directory, or `undefined` if `package.json` was never found or if the `node_modules` directory is unwritable.
 
 #### options
 
@@ -55,7 +57,7 @@ Should be the same as your project name in `package.json`.
 
 ##### files
 
-Type: `string[] | string`
+Type: `string[]`
 
 An array of files that will be searched for a common parent directory. This common parent directory will be used in lieu of the `cwd` option below.
 
@@ -64,36 +66,14 @@ An array of files that will be searched for a common parent directory. This comm
 Type: `string`\
 Default `process.cwd()`
 
-Directory to start searching for a `package.json` from.
+The directory to start searching for a `package.json` from.
 
 ##### create
 
 Type: `boolean`\
 Default `false`
 
-If `true`, the directory will be created synchronously before returning.
-
-##### thunk
-
-Type: `boolean`\
-Default `false`
-
-If `true`, this modifies the return type to be a function that is a thunk for `path.join(theFoundCacheDirectory)`.
-
-```js
-const thunk = findCacheDir({name: 'foo', thunk: true});
-
-thunk();
-//=> '/some/path/node_modules/.cache/foo'
-
-thunk('bar.js')
-//=> '/some/path/node_modules/.cache/foo/bar.js'
-
-thunk('baz', 'quz.js')
-//=> '/some/path/node_modules/.cache/foo/baz/quz.js'
-```
-
-This is helpful for actually putting actual files in the cache!
+Create the directory synchronously before returning.
 
 ## Tips
 

@@ -20,10 +20,6 @@ function useDirectory(directory, options) {
 		fs.mkdirSync(directory, {recursive: true});
 	}
 
-	if (options.thunk) {
-		return (...arguments_) => path.join(directory, ...arguments_);
-	}
-
 	return directory;
 }
 
@@ -45,10 +41,14 @@ export default function findCacheDirectory(options = {}) {
 		return useDirectory(path.join(env.CACHE_DIR, options.name), options);
 	}
 
-	let {cwd: directory = cwd()} = options;
+	let {cwd: directory = cwd(), files} = options;
 
-	if (options.files) {
-		directory = commonPathPrefix(options.files.map(file => path.resolve(directory, file)));
+	if (files) {
+		if (!Array.isArray(files)) {
+			throw new TypeError(`Expected \`files\` option to be an array, got \`${typeof files}\`.`);
+		}
+
+		directory = commonPathPrefix(files.map(file => path.resolve(directory, file)));
 	}
 
 	directory = packageDirectorySync({cwd: directory});
