@@ -2,7 +2,7 @@
 
 > Finds the common standard cache directory
 
-The [`nyc`](https://github.com/istanbuljs/nyc) and [`AVA`](https://ava.li) projects decided to standardize on a common directory structure for storing cache information:
+The [`nyc`](https://github.com/istanbuljs/nyc) and [`AVA`](https://avajs.dev) projects decided to standardize on a common directory structure for storing cache information:
 
 ```sh
 # nyc
